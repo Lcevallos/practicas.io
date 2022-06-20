@@ -184,7 +184,8 @@ $json = json_decode($responseData, true);
 		
 		</div>
 	</div>
-	<p>Powered by <a href="http://www.datafast.com.ec/" target="_blank">Datafast</a></p>	
+	
+	<p>Powered by <a href="http://petssocialnetwork.io" target="_blank" rel="noopener"> <!-- Compliant --></p>	
 	</div>
 </div>
 </body>
