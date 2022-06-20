@@ -26,7 +26,7 @@ if (filesize($nombre_fichero) == 0){
   fclose($file);     
 }
 
-
+//88
 
 $merchantId=$mid;//Homologación 7100040113
 $terminalId=$tid;//BP para OTT
