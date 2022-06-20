@@ -17,7 +17,7 @@ if (!file_exists($nombre_fichero)) {
 if (filesize($nombre_fichero) == 0){
   $vacio = false;
 }else{
-  $file = fopen($nombre_fichero, "r") || exit("Error abriendo fichero!");
+  $file = fopen($nombre_fichero, "r") || ("Error abriendo fichero!");
   $linea = fgets($file);
   $terminal =  explode("_", $linea);
   $mid = trim($terminal[0]);
@@ -31,14 +31,6 @@ if (filesize($nombre_fichero) == 0){
 $merchantId=$mid;//Homologación 7100040113
 $terminalId=$tid;//BP para OTT
 
-/*
-$merchantId="5000004001";//SUPERMAXI
-$terminalId="L0100402";
-
-*/
-
-/*$merchantId="1000000505";
-$terminalId="PD100406";*/
 
 
 
