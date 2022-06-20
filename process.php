@@ -48,7 +48,7 @@ $_SESSION['merchterm'] = $merchterm;
 }else{*/
 	$_SESSION['entityId'] = "8a8294175f113aad015f11652f2200a5";
 	$_SESSION['autorizador'] =  "OGE4Mjk0MTg1YTY1YmY1ZTAxNWE2YzhjNzI4YzBkOTV8YmZxR3F3UTMyWA==";
-//}
+
 
 
 
