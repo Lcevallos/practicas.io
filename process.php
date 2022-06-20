@@ -60,8 +60,8 @@ $_SESSION['merchterm'] = $merchterm;
 
 
 
-function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_nombre, $segundo_nombre, $apellido, $cedula, $trx,$ip_address, $finger,$merchterm,
-	$telefono, $direccion_cliente, $pais_cliente, $direccion_entrega, $pais_entrega) {
+function request($items,$iva,$totaTarifa12,$totalBase0,  $apellido, $finger,$merchterm
+	 ) {
 	$finger = urlencode($finger);
 	$i = 0;
 	$url = "https://test.oppwa.com/v1/checkouts";
@@ -72,23 +72,21 @@ function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_n
 	$valueTotalIva 	= str_pad($totaTarifa12, 12, '0', STR_PAD_LEFT);
 	$valueTotalBase0= str_pad($totalBase0, 12, '0', STR_PAD_LEFT);	
 	$data = "entityId=".$_SESSION['entityId'].
-		"&amount=".$total.
+		
 		"&currency=USD".
 		"&paymentType=DB".
-		"&customer.givenName=".$primer_nombre.
-		"&customer.middleName=".$segundo_nombre.
+
 		"&customer.surname=".$apellido.
-		"&customer.ip=".$ip_address.
+		
 		"&customer.merchantCustomerId=000000000001".
 		"&merchantTransactionId=transaction_".$trx.		
-		"&customer.email=".$email.
 		"&customer.identificationDocType=IDCARD".		
-		"&customer.identificationDocId=".$cedula.
-		"&customer.phone=".$telefono.
-		"&billing.street1=".$direccion_cliente.
-		"&billing.country=".$pais_cliente.
-		"&shipping.street1=".$direccion_entrega.
-		"&shipping.country=".$pais_entrega.
+		
+		
+		
+		
+		
+		
 		/*"&recurringType=INITIAL".*/
 		"&risk.parameters[USER_DATA2]=DATAFAST".
 		"&customParameters[SHOPPER_VERSIONDF]=2".
@@ -110,7 +108,7 @@ function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_n
 		'Authorization:Bearer '.$_SESSION['autorizador']));
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);// this should be set to true in production
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);// this should be set to true in production
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$responseData = curl_exec($ch);
 	if(curl_errno($ch)) {
