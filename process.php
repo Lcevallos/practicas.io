@@ -79,7 +79,7 @@ function request($items,$iva,$totaTarifa12,$totalBase0,  $apellido, $finger,$mer
 		"&customer.surname=".$apellido.
 		
 		"&customer.merchantCustomerId=000000000001".
-		"&merchantTransactionId=transaction_".$trx.		
+				
 		"&customer.identificationDocType=IDCARD".		
 		
 		
